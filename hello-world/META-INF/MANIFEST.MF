@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1477062788677
+Build-Jdk: 1.8.0_91
+Built-By: ekis
+Bundle-DocURL: https://www.opendaylight.org
+Bundle-License: https://www.eclipse.org/legal/epl-v10.html
+Bundle-ManifestVersion: 2
+Bundle-Name: com.customer.hello-world
+Bundle-SymbolicName: com.customer.hello-world
+Bundle-Vendor: OpenDaylight
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.opendaylight.yang.gen.v1.http.netconfcentral.org.ns.
+ toaster.rev091120;uses:="org.opendaylight.yangtools.concepts,org.openda
+ ylight.yangtools.yang.binding,org.opendaylight.yangtools.yang.common";v
+ ersion="1.0.0"
+Import-Package: com.google.common.base;version="[18.0,19)",com.google.co
+ mmon.collect;version="[18.0,19)",org.opendaylight.yangtools.concepts;ve
+ rsion="[0.8,1)",org.opendaylight.yangtools.yang.binding;version="[0.8,1
+ )",org.opendaylight.yangtools.yang.common;version="[0.8,1)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Tool: Bnd-3.0.0.201509101326
