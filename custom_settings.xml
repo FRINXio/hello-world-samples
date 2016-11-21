@@ -18,13 +18,13 @@
                     </snapshots>
                     <id>release</id>
                     <name>releases</name>
-                    <url>http://172.77.77.3:8081/repository/releases/</url>
+                    <url>http://172.28.0.3:8081/repository/releases/</url>
                 </repository>
                 <repository>
                     <snapshots/>
                     <id>snapshot</id>
                     <name>snapshots</name>
-                    <url>http://172.77.77.3:8081/repository/snapshots/</url>
+                    <url>http://172.28.0.3:8081/repository/snapshots/</url>
                 </repository>
             </repositories>
             <pluginRepositories>
@@ -34,13 +34,13 @@
                     </snapshots>
                     <id>release</id>
                     <name>releases</name>
-                    <url>http://172.77.77.3:8081/repository/releases/</url>
+                    <url>http://172.28.0.3:8081/repository/releases/</url>
                 </pluginRepository>
                 <pluginRepository>
                     <snapshots/>
                     <id>snapshot</id>
                     <name>snapshots</name>
-                    <url>http://172.77.77.3:8081/repository/snapshots/</url>
+                    <url>http://172.28.0.3:8081/repository/snapshots/</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
