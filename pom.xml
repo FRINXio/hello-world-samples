@@ -20,7 +20,8 @@
     <module>hello-world-it</module>
     <module>hello-world-artifacts</module>
     <module>hello-world-features</module>
-    <module>hello-world-distribution</module>
+<!--    <module>hello-world-distribution</module>
+-->
   </modules>
 
   <build>
