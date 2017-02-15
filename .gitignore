@@ -23,3 +23,5 @@ target/
 *.ear
 
 
+MANIFEST.MF
+yang-gen-config
