@@ -19,6 +19,12 @@
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
       <artifactId>sal-binding-it</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>equinoxSDK381</groupId>
+          <artifactId>org.eclipse.osgi</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.customer</groupId>
@@ -52,11 +58,13 @@
       <groupId>org.ops4j.pax.exam</groupId>
       <artifactId>pax-exam-junit4</artifactId>
     </dependency>
-    <dependency>
-      <groupId>equinoxSDK381</groupId>
-      <artifactId>org.eclipse.osgi</artifactId>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>org.eclipse.osgi</artifactId>
+        <version>3.9.1.v20130814-1242</version>
+      </dependency>
+
+
     <dependency>
       <groupId>org.ops4j.pax.exam</groupId>
       <artifactId>pax-exam-container-native</artifactId>
