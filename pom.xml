@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.opendaylight.controller</groupId>
     <artifactId>commons.opendaylight</artifactId>
-    <version>1.6.4-Beryllium-SR4.8-frinxodl</version>
+    <version>1.6.4-Beryllium-SR4.12-frinxodl</version>
   </parent>
 
   <groupId>com.customer</groupId>
