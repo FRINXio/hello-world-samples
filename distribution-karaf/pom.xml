@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.customer</groupId>
   <version>1.0.0-SNAPSHOT</version>
-  <artifactId>hello-world-distribution</artifactId>
+  <artifactId>distribution-karaf</artifactId>
   <packaging>pom</packaging>
 
 
