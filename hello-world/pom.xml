@@ -25,6 +25,10 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+      </plugin>
+      <plugin>
         <groupId>org.opendaylight.yangtools</groupId>
         <artifactId>yang-maven-plugin</artifactId>
         <dependencies>
@@ -55,10 +59,4 @@
       </plugin>
     </plugins>
   </build>
-  <scm>
-    <connection>scm:git:http://git.opendaylight.org/gerrit/controller.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/controller.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL</url>
-  </scm>
 </project>

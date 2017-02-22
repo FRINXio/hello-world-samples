@@ -12,6 +12,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+
   <modules>
     <module>hello-world</module>
     <module>hello-world-consumer</module>
@@ -21,9 +22,7 @@
     <module>hello-world-artifacts</module>
     <module>hello-world-features</module>
     <module>distribution-karaf</module>
-    <module>packaging-docker</module>
   </modules>
-
   <build>
     <pluginManagement>
       <plugins>
@@ -32,119 +31,78 @@
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${bundle.plugin.version}</version>
           <extensions>true</extensions>
-          <!--executions> <execution> <id>bundle-manifest</id>
-                        <phase>process-classes</phase> <goals> <goal>manifest</goal> </goals> </execution>
-                        </executions -->
           <configuration>
             <instructions>
               <Bundle-Name>${project.groupId}.${project.artifactId}</Bundle-Name>
             </instructions>
-            <manifestLocation>${project.basedir}/META-INF</manifestLocation>
           </configuration>
         </plugin>
-        <!--This plugin's configuration is used to store Eclipse
-                    m2e settings only. It has no influence on the Maven build itself. -->
+
         <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>${lifecycle.mapping.version}</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>net.alchim31.maven</groupId>
-                    <artifactId>scala-maven-plugin</artifactId>
-                    <versionRange>[0,)</versionRange>
+            <groupId>org.opendaylight.yangtools</groupId>
+            <artifactId>yang-maven-plugin</artifactId>
+            <executions>
+                <execution>
                     <goals>
-                      <goal>compile</goal>
-                      <goal>testCompile</goal>
+                        <goal>generate-sources</goal>
                     </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore/>
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <versionRange>[0,)</versionRange>
-                    <goals>
-                      <goal>prepare-agent</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore/>
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.opendaylight.yangtools</groupId>
-                    <artifactId>yang-maven-plugin</artifactId>
-                    <versionRange>[0.5,)</versionRange>
-                    <goals>
-                      <goal>generate-sources</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <execute/>
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
+                    <configuration>
+                        <yangFilesRootDir>src/main/yang</yangFilesRootDir>
+                        <codeGenerators>
+                            <generator>
+                                <codeGeneratorClass>
+                                    org.opendaylight.yangtools.maven.sal.api.gen.plugin.CodeGeneratorImpl
+                                </codeGeneratorClass>
+                                <outputBaseDir>
+                                    target/generated-sources/sal
+                                </outputBaseDir>
+                            </generator>
+                            <generator>
+                                <codeGeneratorClass>org.opendaylight.yangtools.yang.unified.doc.generator.maven.DocumentationGeneratorImpl</codeGeneratorClass>
+                                <outputBaseDir>target/site</outputBaseDir>
+                            </generator>
+                            <generator>
+                                <codeGeneratorClass>org.opendaylight.yangtools.yang.wadl.generator.maven.WadlGenerator</codeGeneratorClass>
+                                <outputBaseDir>target/site</outputBaseDir>
+                            </generator>
+                            <generator>
+                                <codeGeneratorClass>
+                                    org.opendaylight.controller.config.yangjmxgenerator.plugin.JMXGenerator
+                                </codeGeneratorClass>
+                                <outputBaseDir>${project.build.directory}/generated-sources/config</outputBaseDir>
+                                <additionalConfiguration>
+                                    <namespaceToPackage1>
+                                        urn:opendaylight:params:xml:ns:yang:controller==org.opendaylight.controller.config.yang
+                                    </namespaceToPackage1>
+                                </additionalConfiguration>
+                            </generator>
+                        </codeGenerators>
+                        <inspectDependencies>true</inspectDependencies>
+                    </configuration>
+                </execution>
+            </executions>
+            <dependencies>
+                <dependency>
+                    <groupId>org.opendaylight.mdsal</groupId>
+                    <artifactId>maven-sal-api-gen-plugin</artifactId>
+                    <version>${yangtools.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.opendaylight.controller</groupId>
+                    <artifactId>yang-jmx-generator-plugin</artifactId>
+                    <version>${config.version}</version>
+                </dependency>
+            </dependencies>
         </plugin>
       </plugins>
-
     </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.opendaylight.yangtools</groupId>
-        <artifactId>yang-maven-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>org.opendaylight.controller</groupId>
-            <artifactId>yang-jmx-generator-plugin</artifactId>
-            <version>${config.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
   </build>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>${findbugs.maven.plugin.version}</version>
-        <configuration>
-          <effort>Max</effort>
-          <threshold>Low</threshold>
-          <goal>site</goal>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jdepend-maven-plugin</artifactId>
-        <version>${jdepend.maven.plugin.version}</version>
-      </plugin>
-    </plugins>
-  </reporting>
-
-  <scm>
-    <connection>scm:git:http://git.opendaylight.org/gerrit/controller.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/controller.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL</url>
-  </scm>
-
+  <profiles>
+      <profile>
+          <id>docker</id>
+          <modules>
+              <module>packaging-docker</module>
+          </modules>
+      </profile>
+  </profiles>
 </project>
