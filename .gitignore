@@ -21,7 +21,3 @@ target/
 *.jar
 *.war
 *.ear
-
-
-MANIFEST.MF
-yang-gen-config
