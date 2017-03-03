@@ -9,7 +9,7 @@
 
   <groupId>com.customer</groupId>
   <artifactId>hello-world-samples</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.4.4.rc1-frinx</version>
   <packaging>pom</packaging>
 
 
