@@ -27,14 +27,20 @@ docker exec -it $CONTAINER_ID bin/client -u karaf
 For developers/testers
 ======================
 Usage:
+To build docker image locally:
 ```
-mvn install - build docker image locally
-mvn deploy  - push the image to docker registry
+mvn install
 ```
+To deploy image to a registry:
+```
+mvn -Ddocker_registry_address_with_slash=nexus.localhost:8082/ -Ddocker_server_id=sbe-registry deploy
+```
+If the `docker_registry_address_with_slash` variable is not set, image will be deployed to docker hub.
+Credentials are stored in maven's settings.xml file, id is based on `docker_server_id` variable
+and defaults to sbe-registry. See https://github.com/spotify/docker-maven-plugin for details.
 
 Profiles:
- latest - tag local tag with 'latest' in package phase, push tag remotely in install phase
-
+* latest - tag local tag with 'latest' in package phase, push tag remotely in install phase
 Running:
 Debugging licensing calls:
 ```
