@@ -1,15 +1,3 @@
-/*
- * This is a Job DSL script that manages jenkins job responsible for
- * mirroring hello-world-samples repository from github to SBE's gerrit.
- * Usage: Create jenkins new project named 'jobdsl-github'.
- * In SCM, enter URL https://github.com/FRINXio/hello-world-samples.git
- * and Branch Specifier beryllium/development .
- * In Build, click Add build step: Process Job DSLs, keep option
- * Look on Filesystem and enter: 
- * jobs/*.groovy
- * Save and build the project.
- */
-
 def inputGitUrl = 'https://github.com/FRINXio/hello-world-samples.git'
 def outputGerritProjectName = 'hello-world-samples'
 def outputGitUrl = 'ssh://admin@gerrit:29418/' + outputGerritProjectName

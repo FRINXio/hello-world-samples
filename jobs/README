@@ -1,0 +1,11 @@
+This is a Job DSL script folder that manages jenkins job responsible for
+mirroring hello-world-samples repository from github to SBE's gerrit and
+building it in SBE.
+
+Usage: Create jenkins new project named 'jobdsl-github'.
+In SCM, enter URL https://github.com/FRINXio/hello-world-samples.git
+and Branch Specifier beryllium/development .
+In Build, click Add build step: Process Job DSLs, keep option
+Look on Filesystem and enter:
+jobs/*.groovy
+Save and build the project.
