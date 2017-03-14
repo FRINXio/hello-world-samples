@@ -19,7 +19,7 @@ job('dsl-hello-world-mirror-from-github') {
       }
     }
     triggers {
-        scm('* * * * *')
+        scm('@daily')
     }
     wrappers {
         sshAgent(outputCredentialsId)
