@@ -27,7 +27,7 @@ job('dsl-hello-world-mirror-from-github') {
     steps {
         shell(
 (createOutputProject?
-'curl --user admin:passwd -v -X PUT http://gerrit:8080/a/projects/' + outputGerritProjectName:'')
+'curl --user admin:passwd -v -X PUT http://gerrit/a/projects/' + outputGerritProjectName:'')
 +
 '''
 ssh-keyscan -t rsa -p 29418 -H gerrit >> ~/.ssh/known_hosts

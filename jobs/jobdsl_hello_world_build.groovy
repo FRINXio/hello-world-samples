@@ -4,8 +4,8 @@ def inputCredentialsId = 'root'
 
 
 Map branchesToAltRepos = [
-  'beryllium/release':'"release::default::http://nexus:8081/repository/maven-releases"',
-  'beryllium/development':'"snapshot::default::http://nexus:8081/repository/maven-snapshots"',
+  'beryllium/release':'"release::default::http://nexus/repository/maven-releases"',
+  'beryllium/development':'"snapshot::default::http://nexus/repository/maven-snapshots"',
 ]
 
 branchesToAltRepos.each {branchName,altRepo->
