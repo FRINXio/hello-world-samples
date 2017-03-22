@@ -24,19 +24,11 @@ import org.ops4j.pax.exam.util.PathUtils;
 import javax.inject.Inject;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
-
 import java.lang.management.ManagementFactory;
 
 import static org.junit.Assert.assertEquals;
-import static org.opendaylight.controller.test.sal.binding.it.TestHelper.baseModelBundles;
-import static org.opendaylight.controller.test.sal.binding.it.TestHelper.bindingAwareSalBundles;
-import static org.opendaylight.controller.test.sal.binding.it.TestHelper.configMinumumBundles;
-import static org.opendaylight.controller.test.sal.binding.it.TestHelper.junitAndMockitoBundles;
-import static org.opendaylight.controller.test.sal.binding.it.TestHelper.mdSalCoreBundles;
-import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
-import static org.ops4j.pax.exam.CoreOptions.options;
-import static org.ops4j.pax.exam.CoreOptions.systemPackages;
-import static org.ops4j.pax.exam.CoreOptions.systemProperty;
+import static org.opendaylight.controller.test.sal.binding.it.TestHelper.*;
+import static org.ops4j.pax.exam.CoreOptions.*;
 
 @RunWith(PaxExam.class)
 public class ToasterTest {
@@ -47,15 +39,11 @@ public class ToasterTest {
 
     @Configuration
     public Option[] config() {
-        return options(systemProperty("osgi.console").value("2401"), mavenBundle("org.slf4j", "slf4j-api")
-                .versionAsInProject(), //
-                          mavenBundle("org.slf4j", "log4j-over-slf4j").versionAsInProject(), //
-
-                                systemProperty("logback.configurationFile").value(
+        return options(systemProperty("osgi.console").value("2401"),
+                mavenBundle("org.slf4j", "slf4j-api").versionAsInProject(), //
+                systemProperty("logback.configurationFile").value(
                         "file:" + PathUtils.getBaseDir()
                                 + "/src/test/resources/logback.xml"),
-                mavenBundle("ch.qos.logback", "logback-core").versionAsInProject(), //
-                mavenBundle("ch.qos.logback", "logback-classic").versionAsInProject(), //
                 systemProperty("osgi.bundles.defaultStartLevel").value("4"),
                 systemPackages("sun.nio.ch"),
 
@@ -63,7 +51,6 @@ public class ToasterTest {
                 mdSalCoreBundles(),
 
                 bindingAwareSalBundles(),
-                configMinumumBundles(),
                 // BASE Models
                 baseModelBundles(),
 

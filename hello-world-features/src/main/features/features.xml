@@ -13,7 +13,7 @@
     <repository>mvn:org.opendaylight.controller/features-config/{{VERSION}}/xml/features</repository>
     <repository>mvn:org.opendaylight.controller/features-config-persister/{{VERSION}}/xml/features</repository>
     <repository>mvn:org.opendaylight.controller/features-config-netty/{{VERSION}}/xml/features</repository>
-    <repository>mvn:org.opendaylight.controller/features-akka/{{VERSION}}/xml/features</repository>
+    <repository>mvn:org.opendaylight.odlparent/features-akka/{{VERSION}}/xml/features</repository>
 
 
     <feature name='hello-world' version='${project.version}' description="OpenDaylight :: Hello World">
