@@ -1,11 +1,11 @@
-def gitUrl = 'ssh://admin@gerrit:29418/hello-world-samples'
+def gitUrl = 'ssh://admin@$GERRIT_FQDN:29418/hello-world-samples'
 def restrictedByLabel = 'docker-agent'
 def inputCredentialsId = 'root'
 
 
 Map branchesToAltRepos = [
-  'beryllium/release':'"release::default::http://nexus/repository/maven-releases"',
-  'beryllium/development':'"snapshot::default::http://nexus/repository/maven-snapshots"',
+  'beryllium/release':'"release::default::http://$NEXUS_FQDN/repository/maven-releases"',
+  'beryllium/development':'"snapshot::default::http://$NEXUS_FQDN/repository/maven-snapshots"',
 ]
 
 branchesToAltRepos.each {branchName,altRepo->
@@ -28,7 +28,7 @@ branchesToAltRepos.each {branchName,altRepo->
       maven{
         goals('''
   -B 
-  -Ddocker_registry_address_with_slash=nexus.localhost:8082/
+  -Ddocker_registry_address_with_slash=$NEXUS_FQDN:8082/
   help:effective-pom deploy 
   -P docker 
   -DaltDeploymentRepository=''' + altRepo)

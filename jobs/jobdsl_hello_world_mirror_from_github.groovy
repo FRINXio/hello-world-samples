@@ -1,6 +1,6 @@
 def inputGitUrl = 'https://github.com/FRINXio/hello-world-samples.git'
 def outputGerritProjectName = 'hello-world-samples'
-def outputGitUrl = 'ssh://admin@gerrit:29418/' + outputGerritProjectName
+def outputGitUrl = 'ssh://admin@$GERRIT_FQDN:29418/' + outputGerritProjectName
 def createOutputProject = true
 def branchPrefix = ''
 def restrictedByLabel = 'docker-agent'
@@ -27,10 +27,10 @@ job('dsl-hello-world-mirror-from-github') {
     steps {
         shell(
 (createOutputProject?
-'curl --user admin:passwd -v -X PUT http://gerrit/a/projects/' + outputGerritProjectName:'')
+'curl --user admin:passwd -v -X PUT http://$GERRIT_FQDN/a/projects/' + outputGerritProjectName:'')
 +
 '''
-ssh-keyscan -t rsa -p 29418 -H gerrit >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa -p 29418 -H $GERRIT_FQDN >> ~/.ssh/known_hosts
 git remote rm downstream | true
 git remote add downstream ''' + outputGitUrl + '''
 
