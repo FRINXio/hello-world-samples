@@ -14,8 +14,8 @@
 
   <properties>
     <frinx.version>1.4.5.frinx-SNAPSHOT</frinx.version>
-    <odlparent.version>1.6.4-Beryllium-SR4.15-frinxodl-SNAPSHOT</odlparent.version>
-    <karaf.resources.version>1.6.4-Beryllium-SR4.15-frinxodl-SNAPSHOT</karaf.resources.version>
+    <odlparent.version>1.6.4-Beryllium-SR4.1_4_5_rc1-frinxodl</odlparent.version>
+    <karaf.resources.version>1.6.4-Beryllium-SR4.1_4_5_rc1-frinxodl</karaf.resources.version>
     <autostarted.features>hello-world,</autostarted.features>      <!-- separated by comma -->
   </properties>
 
