@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.customer</groupId>
         <artifactId>hello-world-samples</artifactId>
-        <version>1.4.5.frinx-SNAPSHOT</version>
+        <version>1.4.5.rc1-frinx</version>
     </parent>
     <artifactId>packaging-docker</artifactId>
 
