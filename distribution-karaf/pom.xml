@@ -134,7 +134,12 @@
         <artifactId>karaf-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <!-- no startupFeatures -->
+          <startupFeatures>
+            <!-- For some reason, the eventadmin bundle works fine when installed via the
+                   startup.properties but doesn't work properly when installed via the
+                   boot features.  -->
+            <feature>eventadmin</feature>
+          </startupFeatures>
           <bootFeatures>
             <feature>standard</feature>
           </bootFeatures>
@@ -209,7 +214,7 @@
             <phase>prepare-package</phase>
             <configuration>
              <outputDirectory>${project.build.directory}/assembly</outputDirectory>
-             <groupId>org.opendaylight.controller</groupId>
+             <groupId>org.opendaylight.odlparent</groupId>
              <includeArtifactIds>opendaylight-karaf-resources</includeArtifactIds>
              <excludes>META-INF\/**</excludes>
              <excludeTransitive>true</excludeTransitive>
