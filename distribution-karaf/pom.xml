@@ -16,7 +16,7 @@
     <frinx.version>2.2.2.frinx-SNAPSHOT</frinx.version>
     <odlparent.version>1.7.2-Boron-SR2.2_2_2-frinxodl-SNAPSHOT</odlparent.version>
     <karaf.resources.version>1.7.2-Boron-SR2.2_2_2-frinxodl-SNAPSHOT</karaf.resources.version>
-    <autostarted.features>hello-world,</autostarted.features>      <!-- separated by comma -->
+    <autostarted.features>hello-world</autostarted.features>
   </properties>
 
   <dependencies>
@@ -142,6 +142,7 @@
           </startupFeatures>
           <bootFeatures>
             <feature>standard</feature>
+            <feature>${autostarted.features}</feature>
           </bootFeatures>
           <!-- no installedFeatures -->
         </configuration>
@@ -262,12 +263,6 @@
                           <include name="shell"/>
                         </fileset>
                     </chmod>
-
-                    <replaceregexp file="${project.build.directory}/assembly/etc/org.apache.karaf.features.cfg"
-                                   match="featuresBoot=(.*)"
-                                   replace="featuresBoot=config, standard, region, package, kar, ssh, management, ${autostarted.features}"
-                                   byline="true" />
-
                   </tasks>
                 </configuration>
             </execution>
