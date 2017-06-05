@@ -5,6 +5,7 @@
       <groupId>io.frinx.distribution</groupId>
       <artifactId>root</artifactId>
       <version>2.2.2.frinx-SNAPSHOT</version>
+      <relativePath />
   </parent>
   <groupId>com.customer</groupId>
   <version>2.2.2.frinx-SNAPSHOT</version>
@@ -36,6 +37,11 @@
           <groupId>org.apache.sshd</groupId>
           <artifactId>sshd-core</artifactId>
         </exclusion>
+        <!-- We provide a newer version of Aries Proxy -->
+        <exclusion>
+          <groupId>org.apache.aries.proxy</groupId>
+          <artifactId>org.apache.aries.proxy.impl</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <!-- scope is runtime so the feature repo is listed in the features
@@ -62,6 +68,14 @@
       <groupId>org.opendaylight.odlparent</groupId>
       <artifactId>opendaylight-karaf-resources</artifactId>
       <version>${karaf.resources.version}</version>
+    </dependency>
+
+    <!-- Aries Proxy 1.0.5 contains important bug fixes -->
+    <!-- Once we upgrade to a version of Karaf which has at least 1.0.5, this can be removed -->
+    <dependency>
+      <groupId>org.apache.aries.proxy</groupId>
+      <artifactId>org.apache.aries.proxy.impl</artifactId>
+      <version>1.0.5</version>
     </dependency>
 
     <!-- frinx features -->
@@ -226,22 +240,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>karaf-plugin</artifactId>
-        <version>${odlparent.version}</version>
-        <executions>
-          <execution>
-            <id>populate-local-repo</id>
-            <goals>
-              <goal>populate-local-repo</goal>
-            </goals>
-            <configuration>
-              <localRepo>${project.build.directory}/assembly/system</localRepo>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
@@ -263,12 +261,32 @@
                           <include name="shell"/>
                         </fileset>
                     </chmod>
+                    <!-- Remove this once Karaf provides a new-enough version of Aries Proxy -->
+                    <replace dir="${project.build.directory}/assembly/etc" token="org.apache.aries.proxy.impl/1.0.4"
+                           value="org.apache.aries.proxy.impl/1.0.5">
+                      <include name="startup.properties"/>
+                    </replace>
                   </tasks>
                 </configuration>
             </execution>
         </executions>
       </plugin>
-
+      <plugin>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>karaf-plugin</artifactId>
+        <version>${odlparent.version}</version>
+        <executions>
+          <execution>
+            <id>populate-local-repo</id>
+            <goals>
+              <goal>populate-local-repo</goal>
+            </goals>
+            <configuration>
+              <localRepo>${project.build.directory}/assembly/system</localRepo>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -297,7 +315,6 @@
           </execution>
         </executions>
       </plugin>
-
     </plugins>
   </build>
 </project>
