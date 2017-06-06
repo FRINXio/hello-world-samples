@@ -4,16 +4,16 @@
   <parent>
       <groupId>io.frinx.distribution</groupId>
       <artifactId>root</artifactId>
-      <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.6.rc2-frinx</version>
   </parent>
   <groupId>com.customer</groupId>
-  <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+  <version>1.4.6.rc2-frinx</version>
   <artifactId>distribution-karaf</artifactId>
   <packaging>pom</packaging>
 
 
   <properties>
-    <frinx.version>1.4.6.rc2-frinx-SNAPSHOT</frinx.version>
+    <frinx.version>1.4.6.rc2-frinx</frinx.version>
     <odlparent.version>1.6.4-Beryllium-SR4.1_4_6_rc2-frinxodl</odlparent.version>
     <karaf.resources.version>1.6.4-Beryllium-SR4.1_4_6_rc2-frinxodl</karaf.resources.version>
     <autostarted.features>hello-world,</autostarted.features>      <!-- separated by comma -->

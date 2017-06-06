@@ -10,7 +10,7 @@
 
   <groupId>com.customer</groupId>
   <artifactId>hello-world-features</artifactId>
-  <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+  <version>1.4.6.rc2-frinx</version>
 
   <packaging>jar</packaging>
 
@@ -288,22 +288,22 @@
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world</artifactId>
-      <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.6.rc2-frinx</version>
     </dependency>
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world-consumer</artifactId>
-      <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.6.rc2-frinx</version>
     </dependency>
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world-provider</artifactId>
-      <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.6.rc2-frinx</version>
     </dependency>
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world-config</artifactId>
-      <version>1.4.6.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.6.rc2-frinx</version>
       <type>xml</type>
       <classifier>config</classifier>
     </dependency>
