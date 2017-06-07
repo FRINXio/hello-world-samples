@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>1.4.6.rc3-frinx-SNAPSHOT</version>
+    <version>1.4.6.frinx</version>
     <relativePath>..</relativePath>
   </parent>
   <groupId>com.customer</groupId>
