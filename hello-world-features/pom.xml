@@ -15,27 +15,15 @@
   <packaging>jar</packaging>
 
   <properties>
-    <mdsal.broker>1.4.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</mdsal.broker>
     <yangtools.version>1.0.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</yangtools.version>
     <mdsal.version>2.1.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</mdsal.version>
-    <mdsal.model.version>0.9.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</mdsal.model.version>
     <controller.mdsal.version>1.4.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</controller.mdsal.version>
-    <config.version>0.5.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</config.version>
-    <commons.opendaylight.version>1.7.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</commons.opendaylight.version>
-    <features.file>features.xml</features.file>
     <config.configfile.directory>etc/opendaylight/karaf</config.configfile.directory>
     <config.toaster.configfile>03-toaster-sample.xml</config.toaster.configfile>
   </properties>
 
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>odlparent-artifacts</artifactId>
-        <version>1.7.3-Boron-SR3.2_3_0_rc1-frinxodl-SNAPSHOT</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
       <dependency>
         <groupId>org.opendaylight.yangtools</groupId>
         <artifactId>yangtools-artifacts</artifactId>
@@ -47,13 +35,6 @@
         <groupId>org.opendaylight.mdsal</groupId>
         <artifactId>mdsal-artifacts</artifactId>
         <version>${mdsal.version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-       <dependency>
-        <groupId>org.opendaylight.controller</groupId>
-        <artifactId>config-artifacts</artifactId>
-        <version>${config.version}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -71,12 +52,6 @@
 
     <!-- Required features repositories -->
     <dependency>
-      <groupId>org.opendaylight.odlparent</groupId>
-      <artifactId>features-odlparent</artifactId>
-      <classifier>features</classifier>
-      <type>xml</type>
-    </dependency>
-    <dependency>
       <groupId>org.opendaylight.yangtools</groupId>
       <artifactId>features-yangtools</artifactId>
       <classifier>features</classifier>
@@ -89,199 +64,11 @@
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>org.opendaylight.mdsal.model</groupId>
-      <artifactId>features-mdsal-model</artifactId>
-      <classifier>features</classifier>
-      <version>${mdsal.model.version}</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.odlparent</groupId>
-      <artifactId>features-akka</artifactId>
-      <version>${commons.opendaylight.version}</version>
+      <groupId>org.opendaylight.controller</groupId>
+      <artifactId>features-mdsal</artifactId>
       <classifier>features</classifier>
       <type>xml</type>
     </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>features-config</artifactId>
-      <classifier>features</classifier>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>features-config-persister</artifactId>
-      <classifier>features</classifier>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>features-config-netty</artifactId>
-      <classifier>features</classifier>
-      <type>xml</type>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>md-sal-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>config</classifier>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-akka-raft</artifactId>
-      <version>${controller.mdsal.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-common-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-common-impl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-common-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-core-spi</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-broker-impl</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-karaf-xsql</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-binding-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-binding-config</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-binding-broker-impl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-binding-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-connector-api</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-dom-xsql</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-dom-xsql-config</artifactId>
-      <classifier>config</classifier>
-      <type>xml</type>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-commons</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>moduleshardconf</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>moduleconf</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>akkaconf</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>factoryakkaconf</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>config</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>entityownershipconfig</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-clustering-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>cfg</type>
-      <classifier>datastore</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-distributed-datastore</artifactId>
-    </dependency>
-
-    <!-- message-bus -->
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>messagebus-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>messagebus-impl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>messagebus-config</artifactId>
-      <version>${controller.mdsal.version}</version>
-      <type>xml</type>
-      <classifier>config</classifier>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-inmemory-datastore</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.opendaylight.controller</groupId>
-      <artifactId>sal-remoterpc-connector</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opendaylight.controller.model</groupId>
-      <artifactId>model-inventory</artifactId>
-    </dependency>
-
 
     <!-- Hello World -->
     <dependency>

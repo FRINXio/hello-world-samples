@@ -4,22 +4,17 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
 
-    <repository>mvn:org.opendaylight.odlparent/features-odlparent/{{VERSION}}/xml/features</repository>
     <repository>mvn:org.opendaylight.yangtools/features-yangtools/{{VERSION}}/xml/features</repository>
 
     <repository>mvn:org.opendaylight.mdsal/features-mdsal/{{VERSION}}/xml/features</repository>
-    <repository>mvn:org.opendaylight.mdsal.model/features-mdsal-model/{{VERSION}}/xml/features</repository>
 
-    <repository>mvn:org.opendaylight.controller/features-config/{{VERSION}}/xml/features</repository>
-    <repository>mvn:org.opendaylight.controller/features-config-persister/{{VERSION}}/xml/features</repository>
-    <repository>mvn:org.opendaylight.controller/features-config-netty/{{VERSION}}/xml/features</repository>
-    <repository>mvn:org.opendaylight.odlparent/features-akka/{{VERSION}}/xml/features</repository>
+    <repository>mvn:org.opendaylight.controller/features-mdsal/{{VERSION}}/xml/features</repository>
 
 
     <feature name='hello-world' version='${project.version}' description="OpenDaylight :: Hello World">
         <feature version='${yangtools.version}'>odl-yangtools-common</feature>
         <feature version='${mdsal.version}'>odl-mdsal-binding-runtime</feature>
-        <feature version='${mdsal.broker}'>odl-mdsal-broker</feature>
+        <feature version='${controller.mdsal.version}'>odl-mdsal-broker</feature>
         <bundle>mvn:com.customer/hello-world/{{VERSION}}</bundle>
         <bundle>mvn:com.customer/hello-world-consumer/{{VERSION}}</bundle>
         <bundle>mvn:com.customer/hello-world-provider/{{VERSION}}</bundle>
