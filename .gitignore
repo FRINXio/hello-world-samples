@@ -21,3 +21,5 @@ target/
 *.jar
 *.war
 *.ear
+
+.gitconfig
