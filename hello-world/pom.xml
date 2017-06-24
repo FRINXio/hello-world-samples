@@ -35,7 +35,7 @@
           <dependency>
             <groupId>org.opendaylight.mdsal</groupId>
             <artifactId>maven-sal-api-gen-plugin</artifactId>
-            <version>0.9.3-Boron-SR3.2_3_0_rc2-frinxodl-SNAPSHOT</version>
+            <version>0.9.3-Boron-SR3.2_3_0_rc2-frinxodl</version>
             <type>jar</type>
           </dependency>
         </dependencies>
