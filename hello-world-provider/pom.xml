@@ -12,7 +12,7 @@
   <version>2.3.0.rc2-frinx</version>
 
   <properties>
-    <sal-binding-api.version>1.4.3-Boron-SR3.2_3_0_rc2-frinxodl</sal-binding-api.version>
+    <sal-binding-api.version>1.4.3-Boron-SR3.2_3_0_rc3-frinxodl-SNAPSHOT</sal-binding-api.version>
   </properties>
 
   <dependencies>
