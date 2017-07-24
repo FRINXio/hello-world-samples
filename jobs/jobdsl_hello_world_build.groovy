@@ -28,9 +28,7 @@ branchesToAltRepos.each {branchName,altRepo->
       maven{
         goals('''
   -B 
-  -Ddocker_registry_address_with_slash=$NEXUS_FQDN:8082/
   help:effective-pom deploy 
-  -P docker 
   -DaltDeploymentRepository=''' + altRepo)
         providedGlobalSettings('MyGlobalSettings')
       }
