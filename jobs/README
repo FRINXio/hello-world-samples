@@ -4,7 +4,7 @@ building it in SBE.
 
 Usage: Create new freestyle jenkins project named 'jobdsl-github'.
 In SCM, select Git and enter URL https://github.com/FRINXio/hello-world-samples.git
-and Branch Specifier beryllium/development .
+and Branch Specifier "demo" .
 In Build, click Add build step: Process Job DSLs, keep option
 Look on Filesystem and enter:
 jobs/*.groovy
