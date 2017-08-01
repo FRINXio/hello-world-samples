@@ -12,7 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.opendaylight.controller</groupId>
     <artifactId>hello-world-artifacts</artifactId>
-    <version>2.3.1.rc1-frinx</version>
+    <version>2.3.1.rc2-frinx-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <dependencyManagement>
@@ -20,27 +20,27 @@
             <dependency>
                 <groupId>com.customer</groupId>
                 <artifactId>hello-world</artifactId>
-                <version>2.3.1.rc1-frinx</version>
+                <version>2.3.1.rc2-frinx-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.customer</groupId>
                 <artifactId>hello-world-consumer</artifactId>
-                <version>2.3.1.rc1-frinx</version>
+                <version>2.3.1.rc2-frinx-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.customer</groupId>
                 <artifactId>hello-world-provider</artifactId>
-                <version>2.3.1.rc1-frinx</version>
+                <version>2.3.1.rc2-frinx-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.customer</groupId>
                 <artifactId>hello-world-config</artifactId>
-                <version>2.3.1.rc1-frinx</version>
+                <version>2.3.1.rc2-frinx-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.customer</groupId>
                 <artifactId>features-hello-world</artifactId>
-                <version>2.3.1.rc1-frinx</version>
+                <version>2.3.1.rc2-frinx-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
                 <scope>runtime</scope>
