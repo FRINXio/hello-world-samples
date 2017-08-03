@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>features-parent</artifactId>
-    <version>1.7.3-Boron-SR3.2_3_1_rc3-frinxodl</version>
+    <version>1.7.3-Boron-SR3.2_3_1_rc4-frinxodl-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -15,9 +15,9 @@
   <packaging>jar</packaging>
 
   <properties>
-    <yangtools.version>1.0.3-Boron-SR3.2_3_1_rc3-frinxodl</yangtools.version>
-    <mdsal.version>2.1.3-Boron-SR3.2_3_1_rc3-frinxodl</mdsal.version>
-    <controller.mdsal.version>1.4.3-Boron-SR3.2_3_1_rc3-frinxodl</controller.mdsal.version>
+    <yangtools.version>1.0.3-Boron-SR3.2_3_1_rc4-frinxodl-SNAPSHOT</yangtools.version>
+    <mdsal.version>2.1.3-Boron-SR3.2_3_1_rc4-frinxodl-SNAPSHOT</mdsal.version>
+    <controller.mdsal.version>1.4.3-Boron-SR3.2_3_1_rc4-frinxodl-SNAPSHOT</controller.mdsal.version>
     <config.configfile.directory>etc/opendaylight/karaf</config.configfile.directory>
     <config.toaster.configfile>03-toaster-sample.xml</config.toaster.configfile>
   </properties>
