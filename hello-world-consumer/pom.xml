@@ -4,11 +4,11 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>2.3.1.rc4-frinx</version>
+    <version>2.3.1.rc5-frinx-SNAPSHOT</version>
   </parent>
   <groupId>com.customer</groupId>
   <artifactId>hello-world-consumer</artifactId>
-  <version>2.3.1.rc4-frinx</version>
+  <version>2.3.1.rc5-frinx-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <properties>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>hello-world</artifactId>
-      <version>2.3.1.rc4-frinx</version>
+      <version>2.3.1.rc5-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
