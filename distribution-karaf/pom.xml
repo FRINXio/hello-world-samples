@@ -15,8 +15,8 @@
 
   <properties>
     <frinx.version>2.3.2.rc1-frinx-SNAPSHOT</frinx.version>
-    <odlparent.version>1.7.3-Boron-SR3.2_3_2_rc1-frinxodl-SNAPSHOT</odlparent.version>
-    <karaf.resources.version>1.7.3-Boron-SR3.2_3_2_rc1-frinxodl-SNAPSHOT</karaf.resources.version>
+    <odlparent.version>1.7.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</odlparent.version>
+    <karaf.resources.version>1.7.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</karaf.resources.version>
     <autostarted.features>hello-world</autostarted.features>
   </properties>
 
