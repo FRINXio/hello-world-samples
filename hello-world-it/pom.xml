@@ -4,11 +4,11 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>1.4.8.rc1-frinx</version>
+    <version>1.4.8.rc2-frinx-SNAPSHOT</version>
   </parent>
   <groupId>com.customer</groupId>
   <artifactId>hello-world-it</artifactId>
-  <version>1.4.8.rc1-frinx</version>
+  <version>1.4.8.rc2-frinx-SNAPSHOT</version>
 
   <dependencies>
 
@@ -29,12 +29,12 @@
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world</artifactId>
-      <version>1.4.8.rc1-frinx</version>
+      <version>1.4.8.rc2-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world-consumer</artifactId>
-      <version>1.4.8.rc1-frinx</version>
+      <version>1.4.8.rc2-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.mdsal.model</groupId>
@@ -44,7 +44,7 @@
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world-provider</artifactId>
-      <version>1.4.8.rc1-frinx</version>
+      <version>1.4.8.rc2-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>openexi</groupId>
