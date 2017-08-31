@@ -4,22 +4,22 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+    <version>3.1.0.rc2-frinx-SNAPSHOT</version>
   </parent>
   <groupId>com.customer</groupId>
   <artifactId>hello-world-provider</artifactId>
   <packaging>bundle</packaging>
-  <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+  <version>3.1.0.rc2-frinx-SNAPSHOT</version>
 
   <properties>
-    <sal-binding-api.version>1.4.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</sal-binding-api.version>
+    <sal-binding-api.version>1.5.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</sal-binding-api.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world</artifactId>
-      <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+      <version>3.1.0.rc2-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
@@ -62,7 +62,7 @@
     <!-- used to mock up classes -->
      <dependency>
       <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
+      <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
 

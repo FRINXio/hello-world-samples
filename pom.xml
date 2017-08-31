@@ -1,112 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.opendaylight.controller</groupId>
-    <artifactId>commons.opendaylight</artifactId>
-    <version>1.7.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent</artifactId>
+        <version>1.8.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</version>
+    </parent>
 
-  <groupId>com.customer</groupId>
-  <artifactId>hello-world-samples</artifactId>
-  <version>3.1.0.rc1-frinx-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>com.customer</groupId>
+    <artifactId>hello-world-samples</artifactId>
+    <version>3.1.0.rc2-frinx-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
 
-  <properties>
-    <checkstyle.skip>true</checkstyle.skip>
-  </properties>
+    <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <!-- YANG tools artifacts -->
+        <yangtools.version>1.1.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</yangtools.version>
 
-  <modules>
-    <module>hello-world</module>
-    <module>hello-world-consumer</module>
-    <module>hello-world-provider</module>
-    <module>hello-world-config</module>
-    <module>hello-world-it</module>
-    <module>hello-world-artifacts</module>
-    <module>hello-world-features</module>
-    <module>distribution-karaf</module>
-  </modules>
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>${bundle.plugin.version}</version>
-          <extensions>true</extensions>
-          <configuration>
-            <instructions>
-              <Bundle-Name>${project.groupId}.${project.artifactId}</Bundle-Name>
-            </instructions>
-          </configuration>
-        </plugin>
+        <!-- MD-SAL artifacts -->
+        <mdsal.version>2.2.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</mdsal.version>
+        <mdsal.model.version>0.10.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</mdsal.model.version>
 
-        <plugin>
-            <groupId>org.opendaylight.yangtools</groupId>
-            <artifactId>yang-maven-plugin</artifactId>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>generate-sources</goal>
-                    </goals>
+        <!-- Controller artifacts -->
+        <controller.config.version>0.6.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</controller.config.version>
+        <controller.framework.version>0.9.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</controller.framework.version>
+        <controller.mdsal.version>1.5.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</controller.mdsal.version>
+
+        <exi.nagasena.version>0000.0002.0053.0</exi.nagasena.version>
+        <salGeneratorPath>target/generated-sources/mdsal-binding</salGeneratorPath>
+
+    </properties>
+
+    <modules>
+        <module>hello-world</module>
+        <module>hello-world-consumer</module>
+        <module>hello-world-provider</module>
+        <module>hello-world-config</module>
+        <module>hello-world-it</module>
+        <module>hello-world-artifacts</module>
+        <module>hello-world-features</module>
+        <module>distribution-karaf</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Controller infrastructure -->
+            <dependency>
+                <groupId>org.opendaylight.controller</groupId>
+                <artifactId>mdsal-artifacts</artifactId>
+                <version>${controller.mdsal.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.controller</groupId>
+                <artifactId>config-artifacts</artifactId>
+                <version>${controller.config.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- YANG tools -->
+            <dependency>
+                <groupId>org.opendaylight.yangtools</groupId>
+                <artifactId>yangtools-artifacts</artifactId>
+                <version>${yangtools.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- MD-SAL -->
+            <dependency>
+                <groupId>org.opendaylight.mdsal</groupId>
+                <artifactId>mdsal-artifacts</artifactId>
+                <version>${mdsal.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.mdsal.model</groupId>
+                <artifactId>mdsal-model-artifacts</artifactId>
+                <version>${mdsal.model.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- thirdparty -->
+            <dependency>
+                <groupId>openexi</groupId>
+                <artifactId>nagasena</artifactId>
+                <version>${exi.nagasena.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>openexi</groupId>
+                <artifactId>nagasena-rta</artifactId>
+                <version>${exi.nagasena.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${bundle.plugin.version}</version>
+                    <extensions>true</extensions>
                     <configuration>
-                        <yangFilesRootDir>src/main/yang</yangFilesRootDir>
-                        <codeGenerators>
-                            <generator>
-                                <codeGeneratorClass>
-                                    org.opendaylight.yangtools.maven.sal.api.gen.plugin.CodeGeneratorImpl
-                                </codeGeneratorClass>
-                                <outputBaseDir>
-                                    target/generated-sources/sal
-                                </outputBaseDir>
-                            </generator>
-                            <generator>
-                                <codeGeneratorClass>org.opendaylight.yangtools.yang.unified.doc.generator.maven.DocumentationGeneratorImpl</codeGeneratorClass>
-                                <outputBaseDir>target/site</outputBaseDir>
-                            </generator>
-                            <generator>
-                                <codeGeneratorClass>org.opendaylight.yangtools.yang.wadl.generator.maven.WadlGenerator</codeGeneratorClass>
-                                <outputBaseDir>target/site</outputBaseDir>
-                            </generator>
-                            <generator>
-                                <codeGeneratorClass>
-                                    org.opendaylight.controller.config.yangjmxgenerator.plugin.JMXGenerator
-                                </codeGeneratorClass>
-                                <outputBaseDir>${project.build.directory}/generated-sources/config</outputBaseDir>
-                                <additionalConfiguration>
-                                    <namespaceToPackage1>
-                                        urn:opendaylight:params:xml:ns:yang:controller==org.opendaylight.controller.config.yang
-                                    </namespaceToPackage1>
-                                </additionalConfiguration>
-                            </generator>
-                        </codeGenerators>
-                        <inspectDependencies>true</inspectDependencies>
+                        <instructions>
+                            <Bundle-Name>${project.groupId}.${project.artifactId}</Bundle-Name>
+                        </instructions>
                     </configuration>
-                </execution>
-            </executions>
-            <dependencies>
-                <dependency>
-                    <groupId>org.opendaylight.mdsal</groupId>
-                    <artifactId>maven-sal-api-gen-plugin</artifactId>
-                    <version>0.9.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.opendaylight.controller</groupId>
-                    <artifactId>yang-jmx-generator-plugin</artifactId>
-                    <version>${config.version}</version>
-                </dependency>
-            </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-  <profiles>
-      <profile>
-          <id>docker</id>
-          <modules>
-              <module>packaging-docker</module>
-          </modules>
-      </profile>
-  </profiles>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.opendaylight.yangtools</groupId>
+                    <artifactId>yang-maven-plugin</artifactId>
+                    <version>1.1.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate-sources</goal>
+                            </goals>
+                            <configuration>
+                                <yangFilesRootDir>src/main/yang</yangFilesRootDir>
+                                <codeGenerators>
+                                    <generator>
+                                        <codeGeneratorClass>
+                                            org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl
+                                        </codeGeneratorClass>
+                                        <outputBaseDir>
+                                            target/generated-sources/sal
+                                        </outputBaseDir>
+                                    </generator>
+                                    <generator>
+                                        <codeGeneratorClass>org.opendaylight.mdsal.binding.yang.unified.doc.generator.maven.DocumentationGeneratorImpl</codeGeneratorClass>
+                                        <outputBaseDir>target/site</outputBaseDir>
+                                    </generator>
+                                    <generator>
+                                        <codeGeneratorClass>org.opendaylight.mdsal.binding.yang.wadl.generator.maven.WadlGenerator</codeGeneratorClass>
+                                        <outputBaseDir>target/site</outputBaseDir>
+                                    </generator>
+                                    <generator>
+                                        <codeGeneratorClass>
+                                            org.opendaylight.controller.config.yangjmxgenerator.plugin.JMXGenerator
+                                        </codeGeneratorClass>
+                                        <outputBaseDir>${project.build.directory}/generated-sources/config</outputBaseDir>
+                                        <additionalConfiguration>
+                                            <namespaceToPackage1>
+                                                urn:opendaylight:params:xml:ns:yang:controller==org.opendaylight.controller.config.yang
+                                            </namespaceToPackage1>
+                                        </additionalConfiguration>
+                                    </generator>
+                                </codeGenerators>
+                                <inspectDependencies>true</inspectDependencies>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.opendaylight.mdsal</groupId>
+                            <artifactId>maven-sal-api-gen-plugin</artifactId>
+                            <version>0.10.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.opendaylight.controller</groupId>
+                            <artifactId>yang-jmx-generator-plugin</artifactId>
+                            <version>${controller.config.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <modules>
+                <module>packaging-docker</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

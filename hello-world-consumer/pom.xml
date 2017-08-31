@@ -4,22 +4,22 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+    <version>3.1.0.rc2-frinx-SNAPSHOT</version>
   </parent>
   <groupId>com.customer</groupId>
   <artifactId>hello-world-consumer</artifactId>
-  <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+  <version>3.1.0.rc2-frinx-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <properties>
-    <sal-binding-api.version>1.4.3-Carbon-SR1.3_1_0_rc1-frinxodl-SNAPSHOT</sal-binding-api.version>
+    <sal-binding-api.version>1.5.1-Carbon-SR1.3_1_0_rc2-frinxodl-SNAPSHOT</sal-binding-api.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>hello-world</artifactId>
-      <version>3.1.0.rc1-frinx-SNAPSHOT</version>
+      <version>3.1.0.rc2-frinx-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
