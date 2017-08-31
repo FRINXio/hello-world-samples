@@ -12,7 +12,7 @@
   <version>1.4.8.rc2-frinx-SNAPSHOT</version>
 
   <properties>
-    <sal-binding-api.version>1.3.4-Beryllium-SR4.1_4_8_rc2-frinxodl-SNAPSHOT</sal-binding-api.version>
+    <sal-binding-api.version>1.3.4-Beryllium-SR4.1_4_8_rc2-frinxodl</sal-binding-api.version>
   </properties>
 
   <dependencies>
