@@ -35,7 +35,7 @@
           <dependency>
             <groupId>org.opendaylight.mdsal</groupId>
             <artifactId>maven-sal-api-gen-plugin</artifactId>
-            <version>0.8.4-Beryllium-SR4.1_4_8-frinxodl</version>
+            <version>0.8.4-Beryllium-SR4.1_4_9_rc1-frinxodl-SNAPSHOT</version>
             <type>jar</type>
           </dependency>
         </dependencies>
