@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.8.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</version>
+        <version>1.8.1-Carbon-SR1.3_1_0-frinxodl</version>
     </parent>
 
     <groupId>com.customer</groupId>
@@ -17,16 +17,16 @@
     <properties>
         <checkstyle.skip>true</checkstyle.skip>
         <!-- YANG tools artifacts -->
-        <yangtools.version>1.1.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</yangtools.version>
+        <yangtools.version>1.1.1-Carbon-SR1.3_1_0-frinxodl</yangtools.version>
 
         <!-- MD-SAL artifacts -->
-        <mdsal.version>2.2.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</mdsal.version>
-        <mdsal.model.version>0.10.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</mdsal.model.version>
+        <mdsal.version>2.2.1-Carbon-SR1.3_1_0-frinxodl</mdsal.version>
+        <mdsal.model.version>0.10.1-Carbon-SR1.3_1_0-frinxodl</mdsal.model.version>
 
         <!-- Controller artifacts -->
-        <controller.config.version>0.6.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</controller.config.version>
-        <controller.framework.version>0.9.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</controller.framework.version>
-        <controller.mdsal.version>1.5.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</controller.mdsal.version>
+        <controller.config.version>0.6.1-Carbon-SR1.3_1_0-frinxodl</controller.config.version>
+        <controller.framework.version>0.9.1-Carbon-SR1.3_1_0-frinxodl</controller.framework.version>
+        <controller.mdsal.version>1.5.1-Carbon-SR1.3_1_0-frinxodl</controller.mdsal.version>
 
         <exi.nagasena.version>0000.0002.0053.0</exi.nagasena.version>
         <salGeneratorPath>target/generated-sources/mdsal-binding</salGeneratorPath>
@@ -119,7 +119,7 @@
                 <plugin>
                     <groupId>org.opendaylight.yangtools</groupId>
                     <artifactId>yang-maven-plugin</artifactId>
-                    <version>1.1.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</version>
+                    <version>1.1.1-Carbon-SR1.3_1_0-frinxodl</version>
                     <executions>
                         <execution>
                             <goals>
@@ -164,7 +164,7 @@
                         <dependency>
                             <groupId>org.opendaylight.mdsal</groupId>
                             <artifactId>maven-sal-api-gen-plugin</artifactId>
-                            <version>0.10.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</version>
+                            <version>0.10.1-Carbon-SR1.3_1_0-frinxodl</version>
                         </dependency>
                         <dependency>
                             <groupId>org.opendaylight.controller</groupId>

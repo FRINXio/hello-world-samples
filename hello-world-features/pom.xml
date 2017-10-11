@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>features-parent</artifactId>
-    <version>1.8.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</version>
+    <version>1.8.1-Carbon-SR1.3_1_0-frinxodl</version>
     <relativePath/>
   </parent>
 
@@ -15,9 +15,9 @@
   <packaging>jar</packaging>
 
   <properties>
-    <yangtools.version>1.1.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</yangtools.version>
-    <mdsal.version>2.2.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</mdsal.version>
-    <controller.mdsal.version>1.5.1-Carbon-SR1.3_1_0_rc3-frinxodl-SNAPSHOT</controller.mdsal.version>
+    <yangtools.version>1.1.1-Carbon-SR1.3_1_0-frinxodl</yangtools.version>
+    <mdsal.version>2.2.1-Carbon-SR1.3_1_0-frinxodl</mdsal.version>
+    <controller.mdsal.version>1.5.1-Carbon-SR1.3_1_0-frinxodl</controller.mdsal.version>
     <config.configfile.directory>etc/opendaylight/karaf</config.configfile.directory>
     <config.toaster.configfile>03-toaster-sample.xml</config.toaster.configfile>
   </properties>
