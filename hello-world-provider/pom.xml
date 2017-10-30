@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.customer</groupId>
     <artifactId>hello-world-samples</artifactId>
-    <version>1.4.9.rc2-frinx-SNAPSHOT</version>
+    <version>1.4.9.frinx</version>
   </parent>
   <groupId>com.customer</groupId>
   <artifactId>hello-world-provider</artifactId>
   <packaging>bundle</packaging>
-  <version>1.4.9.rc2-frinx-SNAPSHOT</version>
+  <version>1.4.9.frinx</version>
 
   <properties>
     <sal-binding-api.version>1.3.4-Beryllium-SR4.1_4_9-frinxodl</sal-binding-api.version>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>com.customer</groupId>
       <artifactId>hello-world</artifactId>
-      <version>1.4.9.rc2-frinx-SNAPSHOT</version>
+      <version>1.4.9.frinx</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
